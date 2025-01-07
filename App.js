@@ -157,21 +157,40 @@ export default function App() {
             </TouchableOpacity>
           </View>
           
-          <TouchableOpacity style={styles.communicationCard}>
-            <View>
-              <Text style={styles.communicationName}>Ansar</Text>
+          <ScrollView 
+            horizontal 
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={styles.communicationsContainer}
+          >
+            <TouchableOpacity style={styles.communicationCard}>
+              <View style={styles.communicationHeader}>
+                <Text style={styles.communicationName}>Ansar</Text>
+                <View style={styles.communicationDate}>
+                  <Text style={styles.communicationDateText}>Nov 23, 2024</Text>
+                </View>
+              </View>
               <Text style={styles.communicationSubject}>Email Subject</Text>
               <Text style={styles.communicationPreview}>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</Text>
-            </View>
-            <View style={styles.communicationDate}>
-              <Text style={styles.communicationDateText}>Nov 23, 2024</Text>
-            </View>
-          </TouchableOpacity>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.communicationCard}>
+              <View style={styles.communicationHeader}>
+                <Text style={styles.communicationName}>Ansar</Text>
+                <View style={styles.communicationDate}>
+                  <Text style={styles.communicationDateText}>Nov 23, 2024</Text>
+                </View>
+              </View>
+              <Text style={styles.communicationSubject}>Email Subject</Text>
+              <Text style={styles.communicationPreview}>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</Text>
+            </TouchableOpacity>
+          </ScrollView>
         </View>
 
         {/* Quick Links Section */}
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Quick Links</Text>
+        <View style={styles.sectionHeader}>
+            <Text style={styles.sectionTitle}>Quick Links</Text>
+          </View>
           <View style={styles.quickLinksContainer}>
             <TouchableOpacity style={styles.quickLinkCard}>
               <View style={styles.quickLinkContent}>
@@ -635,34 +654,50 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     borderRadius: 16,
     padding: 16,
+    marginRight: 12,
+    width: 300,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.05,
+    shadowRadius: 3,
+    elevation: 2,
+  },
+  communicationHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-  },
-  communicationName: {
-    fontSize: 20,
-    fontWeight: '500',
-    color: '#1A1A1A',
+    alignItems: 'center',
     marginBottom: 8,
   },
-  communicationSubject: {
+  communicationName: {
     fontSize: 16,
+    fontWeight: '600',
+    color: '#1A1A1A',
+  },
+  communicationDate: {
+    backgroundColor: '#F5F5F5',
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 12,
+  },
+  communicationDateText: {
+    fontSize: 12,
+    color: '#757575',
+  },
+  communicationSubject: {
+    fontSize: 14,
     color: '#1A1A1A',
     marginBottom: 4,
   },
   communicationPreview: {
     fontSize: 14,
     color: '#757575',
+    marginBottom: 8,
   },
-  communicationDate: {
-    backgroundColor: '#F0F0F0',
-    borderRadius: 20,
-    paddingVertical: 6,
-    paddingHorizontal: 12,
-    height: 32,
-  },
-  communicationDateText: {
-    color: '#1A1A1A',
-    fontSize: 14,
+  communicationsContainer: {
+    paddingRight: 16,
   },
   quickLinksContainer: {
     gap: 12,
