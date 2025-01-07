@@ -1,7 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TouchableOpacity, SafeAreaView, ScrollView } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import PropertiesScreen from './src/screens/PropertiesScreen';
 
-export default function App() {
+const Stack = createNativeStackNavigator();
+
+function HomeScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="dark" />
@@ -218,7 +223,7 @@ export default function App() {
               </View>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.quickLinkCard}>
+            <TouchableOpacity style={styles.quickLinkCard} onPress={() => navigation.navigate('Properties')}>
               <View style={styles.quickLinkContent}>
                 <Image 
                   source={{ uri: 'https://img.icons8.com/fluency/96/real-estate.png' }}
@@ -348,6 +353,25 @@ export default function App() {
         </View>
       </View>
     </SafeAreaView>
+  );
+}
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen 
+          name="Home" 
+          component={HomeScreen} 
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen 
+          name="Properties" 
+          component={PropertiesScreen}
+          options={{ title: 'Property Listings' }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
