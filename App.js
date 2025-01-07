@@ -69,11 +69,11 @@ export default function App() {
           
           <TouchableOpacity style={styles.leadCard}>
             <View style={styles.leadContent}>
-              <Text style={styles.leadName}>Chirag</Text>
+              <Text style={styles.leadName}>Amjad</Text>
               <View style={styles.leadContactInfo}>
                 <View style={styles.contactItem}>
                   <Text style={styles.contactLabel}>Email</Text>
-                  <Text style={styles.contactValue}>chirag@gmail.com</Text>
+                  <Text style={styles.contactValue}>amjad@gmail.com</Text>
                 </View>
                 <View style={styles.contactItem}>
                   <Text style={styles.contactLabel}>Mobile</Text>
@@ -100,13 +100,13 @@ export default function App() {
               <View style={styles.infoGrid}>
                 <View style={styles.infoColumn}>
                   <Text style={styles.infoLabel}>Name</Text>
-                  <Text style={styles.infoValue}>Chirag</Text>
+                  <Text style={styles.infoValue}>Amjad</Text>
                   <Text style={styles.infoLabel}>Mobile</Text>
                   <Text style={styles.infoValue}>+971 23445768</Text>
                 </View>
                 <View style={styles.infoColumn}>
                   <Text style={styles.infoLabel}>Email</Text>
-                  <Text style={styles.infoValue}>chirag@gmail.com</Text>
+                  <Text style={styles.infoValue}>amjad@gmail.com</Text>
                   <Text style={styles.infoLabel}>Country</Text>
                   <Text style={styles.infoValue}>UAE</Text>
                 </View>
@@ -450,7 +450,7 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   sectionTitle: {
-    fontSize: 24,
+    fontSize: 18,
     fontWeight: '500',
     color: '#1A1A1A',
   },
