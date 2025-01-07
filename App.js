@@ -368,7 +368,7 @@ export default function App() {
         <Stack.Screen 
           name="Properties" 
           component={PropertiesScreen}
-          options={{ title: 'Property Listings' }}
+          options={{ headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>
